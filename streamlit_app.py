@@ -1,6 +1,7 @@
 import streamlit
 import pandas
 import requests
+import pyautogui
 
 streamlit.title("My Mom's New Healthy Diner")
 
@@ -36,5 +37,8 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # output it the screen as a table
 streamlit.dataframe(fruityvice_normalized)
 
-
+try:
+  streamlit.success("welcme to streamlit community!")
+except:
+  pyautogui.hotkey("ctrl", "F5");
 
